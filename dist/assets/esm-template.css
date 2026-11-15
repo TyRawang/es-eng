@@ -1,0 +1,112 @@
+:root {
+  --_colors---theme-colors--primary: #006b9e;
+  --_colors---theme-colors--primary-02: #1ea5e1;
+  --_colors---theme-colors--secondary: #071b2a;
+  --_colors---theme-colors--body-text: #465867;
+  --_colors---theme-colors--body-title: #102533;
+  --_colors---theme-colors--body-color-01: #f2f7fa;
+  --_colors---theme-colors--body-color-02: #e8f0f4;
+  --_colors---theme-colors--body-color-04: #f2f7fa;
+  --_colors---theme-colors--border-color: #d5e2e9;
+}
+:focus-visible { outline: 3px solid #1ea5e1; outline-offset: 4px; }
+.esm-skip { position: fixed; top: 10px; left: 10px; background: white; color: #071b2a; padding: .5rem 1rem; z-index: 10000; transform: translateY(-150%); }
+.esm-skip:focus { transform: none; }
+.hero { background-image: none; }
+.hero .banner-image[data-hero-scene="rooftop"] { object-position: center 52%; }
+.hero .banner-image[data-hero-scene="testing"] { object-position: center 43%; }
+.hero .home-hero-content.section-padding { background-image: linear-gradient(95deg, #071b2ade 0%, #071b2aa6 38%, #071b2a13 90%), linear-gradient(0deg, #071b2ab0 0%, #071b2a00 36%); }
+.header.esm-home-header { background: #071b2a75; }
+.hero-main-title { text-transform: uppercase; }
+.hero-base .bage-image { width: 100%; }
+.hero-slider-block .hero-image-box { color: inherit; font: inherit; cursor: pointer; }
+.hero-slider-block .hero-image-box[aria-pressed="true"] { border-color: #fff; }
+.hero-slider-block .hero-image-box[aria-pressed="false"] .slider-shape { visibility: hidden; }
+.hero-slider-block .hero-image-box[aria-pressed="true"]::after { content: ""; position: absolute; inset: 0; border: 2px solid #fff; border-radius: inherit; pointer-events: none; }
+.header .nav-logo-image { width: 185px; max-width: 185px; }
+.esm-inner-header, .header.esm-inner-header { position: relative; background: #071b2a; }
+.header .nav-link-block { color: #fff; }
+.header .nav-link-block[aria-current="page"] { text-decoration: underline; text-underline-offset: .3em; }
+.header .nav-link-block:hover { color: #1ea5e1; }
+.header .esm-nav-language { border-left: 1px solid #ffffff50; padding-left: .7rem; }
+.header .esm-nav-support .nav-link-block { color: #89d9ff; }
+.esm-mobile-call { display: none; }
+.footer .footer-title { font-size: clamp(3.6rem, 12vw, 13.5rem); white-space: nowrap; }
+.footer .footer-logo img { width: min(185px, 100%); }
+.footer .menu-group-list { display: flex; flex-wrap: wrap; gap: 2rem; }
+.footer .single-menu-box { min-width: 135px; }
+.footer .footer-contact-link { overflow-wrap: anywhere; }
+.footer .footer-thumbnail { filter: brightness(.45); }
+.esm-sidebar-link { display: block; color: #102533; padding: .6rem .7rem; border-bottom: 1px solid #d5e2e9; }
+.esm-sidebar-link:hover, .esm-current-service { color: #006b9e; }
+.esm-current-service { font-weight: 650; }
+.esm-process-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); }
+.esm-values-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); }
+.esm-process-grid h3, .esm-values-grid h3 { font-size: clamp(1.2rem, 2vw, 1.6rem); }
+.esm-article { max-width: 800px; }
+.esm-article p { margin: 0 0 1.1rem; font-size: 1.05rem; line-height: 1.7; }
+.esm-article h2 { margin: 2.2rem 0 .8rem; font-size: clamp(1.35rem, 2.4vw, 1.75rem); line-height: 1.25; color: #102533; }
+.esm-article .esm-date { margin-bottom: 1.6rem; }
+.esm-article figure { margin: 1.5rem 0; }
+.esm-article figure img { max-height: 39rem; object-fit: contain; width: 100%; }
+.esm-date { color: #465867; font-size: .9rem; }
+.inquiry { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1rem; padding: clamp(1rem,3vw,2rem); background: #f2f7fa; border: 1px solid #d5e2e9; border-radius: .55rem; }
+.inquiry .wide { grid-column: 1/-1; }
+.inquiry label { display: block; font-weight: 600; margin-bottom: .35rem; font-size: .9rem; }
+.inquiry input, .inquiry textarea, .inquiry select { width: 100%; min-height: 44px; padding: .6rem; color: #102533; background: white; border: 1px solid #95afbd; border-radius: .3rem; font: inherit; }
+.inquiry .button { display: inline-flex; align-items: center; gap: .5rem; color: #fff; background: #006b9e; padding: .7rem 1rem; font-weight: 600; border-radius: .3rem; min-height: 44px; }
+.inquiry .form-note, .inquiry .form-status { font-size: .85rem; color: #465867; }
+.inquiry .form-status:empty { display: none; }
+.esm-direct-call { display: inline-block; color: #006b9e; font-weight: 650; margin: .7rem 0; }
+@media (max-width: 991px) {
+  .header .nav-logo-image { width: min(31vw, 150px); max-width: 150px; }
+  .header .nav-menu-2 { background: #071b2a; }
+  .header .esm-nav-language { border-left: 0; padding-left: 0; }
+  .esm-mobile-call { display: inline-flex; justify-content: center; align-items: center; background: #006b9e; color: #fff; min-height: 44px; padding: .4rem .65rem; font-size: .78rem; white-space: nowrap; border-radius: .3rem; }
+  .esm-process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media (max-width: 767px) {
+  .hero .home-hero-content.section-padding { background-image: linear-gradient(180deg, #071b2a4d, #071b2a9e 17%, #071b2ab3 44%, #071b2ac9); }
+  .hero .banner-image[data-hero-scene="office"] { object-position: 35% center; }
+  .hero-main-title { overflow-wrap: anywhere; }
+  .footer .menu-group-list { gap: 1.2rem; }
+  .esm-process-grid, .esm-values-grid, .inquiry { grid-template-columns: minmax(0,1fr); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero *, .image-shape { transition-duration: 0s !important; animation-duration: 0s !important; }
+}
+@media (max-width: 767px) {
+  body { overflow-x: clip; }
+  .hero-meta-slider { max-width: 100%; }
+  .hero-slider-block { max-width: 100%; }
+  .hero-slider-block .hero-image-box { flex: 1 1 0; min-width: 0; }
+  .hero-slider-block .single-hero-image { width: 100%; min-width: 0; max-width: 80px; }
+  .footer .footer-title { font-size: clamp(2.15rem, 10.4vw, 5rem); }
+}
+@media (max-width: 360px) {
+  .hero-slider-block { column-gap: .45rem; }
+  .hero-slider-block .hero-image-box { padding: .35rem; }
+  .contact-hero-title.load-title { font-size: 2rem; }
+}
+.esm-404-link { color: #fff; text-decoration: underline; }
+@media (max-width: 767px) {
+  html { overflow-x: hidden; }
+  main { overflow-x: clip; }
+  .hero-meta-slider { width: min(314px, 100%); }
+  .hero-slider-block { width: 100%; }
+}
+.contact-header.section-padding {
+  background-image: linear-gradient(90deg, #071b2ae8, #071b2a8c), url("design.webp");
+  background-position: center;
+  background-size: cover;
+}
+.cta.section-padding {
+  background-image: linear-gradient(90deg, #071b2ae8, #071b2a8c), url("switchgear.webp");
+  background-position: center;
+  background-size: cover;
+}
+.about-overlay-content {
+  background-image: linear-gradient(90deg, #071b2acc, #071b2a68), url("field-engineer.webp");
+  background-position: center 42%;
+  background-size: cover;
+}
