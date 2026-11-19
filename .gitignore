@@ -6,7 +6,8 @@ Thumbs.db
 node_modules/
 vendor/
 
-# Build output (dist/ is committed: it is the offline review site)
+# Build output
+dist/
 build/
 .next/
 .astro/

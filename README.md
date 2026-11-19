@@ -1,17 +1,50 @@
 # ESM Engineers website
 
-Open `dist/index.html` in a browser to review the site offline. Navigation, English and Spanish pages, images, and typefaces are included. The five archived articles are available in their original English.
+A static website in plain HTML, CSS, and JavaScript, with English and Spanish pages. It needs no build step, framework, or package install.
 
-The editable source is `build.py`, `template_build.py`, `source/services.py`, `source/posts.json`, and `source/assets`. The selected Trends-Eng page layouts are in `source/template`, with their dependencies in `source/template-assets`. With Python and lxml installed, run `python3 build.py` to rebuild `dist`. The build replaces the whole `dist` folder, so edit the source files, not the output. `dist` is committed so the review site can be opened without building. `404.html` uses root-relative links because a server shows it at any URL depth, so view it through a web server, not by opening the file directly. The optional `prepare.py` records how the separate offline archive assets were prepared. A rebuild uses the included files and does not require the archives.
+## View it
 
-## Webflow handoff
+Open `index.html` in a browser, or serve the folder with any static web server, for example:
 
-- Apply the content and brand changes to an editable, licensed Trends-Eng Webflow project. This review uses the original template’s markup, styles, and selected interactions. Use the six service records and five article records for Webflow Collections. The static files are a working reference.
-- Use the supplied Space Grotesk and Inter faces, ESM palette, and original wordmark treatment. Review the archived photos for permissions and sensitive site details before production.
-- The review build uses click-to-call and email drafts. Configure two distinct Webflow forms and verify recipient routing, spam protection, and real submissions in both languages before cutover. The public company number is used for the review's call actions. Confirm it routes to the intended support team.
-- Review the current staff roster, privacy notice, certification wording, and any projects before adding them to the public site.
-- Apply the suggested redirects in `webflow-redirects.csv` after the corresponding pages are staged. Retain existing article slugs where Webflow accepts them. Confirm old URL redirects, locale routing, SEO, and analytics before the production domain switch.
-- This build is configured to stay out of search indexes. Configure production indexing and canonical URLs in Webflow after sign-off.
+```sh
+python3 -m http.server 8000
+```
+
+Then visit http://localhost:8000. `404.html` uses root-relative links because a server can show it at any URL depth, so view it through a server, not by opening the file directly.
+
+## How it is organized
+
+```
+index.html                 Home (English)
+about/  contact/  blog/    English pages
+services/                  Services overview and six service pages
+blog/<article-slug>/       Five archived articles (English only)
+es/                        Spanish versions of every page except the articles
+404.html                   Not-found page
+assets/css/site.css        All styles
+assets/js/site.js          Mobile menu, hero photo switcher, services hover, email-draft forms, scroll reveal
+assets/img/                Photos, logos, hero badge
+assets/fonts/              Space Grotesk and Inter, with their OFL licences
+redirects.csv              Old site URLs and where they should point
+robots.txt                 Keeps the review site out of search engines
+```
+
+Every page is complete on its own and works without JavaScript; the script only adds enhancements.
+
+## Editing
+
+- The header and footer are repeated in every page. When you change a navigation link, contact detail, or service name, update it in all pages. Search across the project for the old text to find every copy.
+- Each service appears in its own page, in the services overview, on the home page, in the footer, in the service sidebar, and in the contact form's service list, in both languages.
+- Links between pages are relative (for example `../contact/index.html`) so the site also works when opened from disk.
+- Colours, fonts, and spacing are defined once as custom properties at the top of `assets/css/site.css`.
+
+## Before launch
+
+- The contact and UPS forms open a draft in the visitor's email app. For production, connect them to a form service or backend, and test recipient routing, spam protection, and real submissions in both languages.
+- Confirm that the public company number used for "Call UPS" reaches the intended support team.
+- Review the archived photos for permissions and sensitive site details. Review staff, privacy notice, certification wording, and any projects before adding them.
+- Set up the redirects in `redirects.csv` on the host, keep the existing article URLs, and check locale routing and analytics before switching the domain.
+- The site is set to stay out of search indexes: every page has `<meta name="robots" content="noindex, nofollow">` and `robots.txt` blocks crawlers. Remove both, and add canonical URLs, after sign-off.
 
 ## Stock photo sources
 
